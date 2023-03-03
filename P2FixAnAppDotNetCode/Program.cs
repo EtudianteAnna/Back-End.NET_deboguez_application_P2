@@ -10,6 +10,11 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 builder.Services.AddSingleton<IPanier, Panier>();
+
+
+
+
+
 builder.Services.AddSingleton<ILangageService, LangageService>();
 builder.Services.AddTransient<IProduitService, ProduitService>();
 builder.Services.AddTransient<IProduitRepository, ProduitRepository>();

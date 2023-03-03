@@ -1,4 +1,6 @@
 ﻿using P2FixAnAppDotNetCode.Models.Repositories;
+using System.Reflection.Metadata.Ecma335;
+using static P2FixAnAppDotNetCode.Models.Panier;
 
 namespace P2FixAnAppDotNetCode.Models.Services
 {
@@ -9,6 +11,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
     {
         private readonly IProduitRepository _produitRepository;
         private readonly ICommandeRepository _commandeRepository;
+        private object quantite;
 
         public ProduitService(IProduitRepository produitRepository, ICommandeRepository commandeRepository)
         {
@@ -19,11 +22,11 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// <summary>
         /// Récupère tous les produits depuis l'inventaire
         /// </summary>
-        public Produit[] GetTousLesProduits()
+        public List<Produit> GetTousLesProduits()
         {
             // TODO changer le type de retour de array à List<T> et propager les changements
             // dans l'application
-            return _produitRepository.GetTousLesProduits();
+            return _produitRepository.GetTousLesProduits().ToList();
         }
 
         /// <summary>
@@ -31,17 +34,35 @@ namespace P2FixAnAppDotNetCode.Models.Services
         /// </summary>
         public Produit GetProduitParId(int id)
         {
-            // TODO implementer la méthode
-            return null;
+
+            return _produitRepository.GetTousLesProduits().FirstOrDefault(p => p.Id == id);
         }
 
         /// <summary>
         /// Met à jour les quantités restantes pour chaque produit dans l'inventaire en fonction des quantités commandées
         /// </summary>
+
+
+        // TODO implementer la méthode
+        // met à jour l'inventaire de produit en utilisant la méthode _produitRepository(propriété qui ades méthodes).MetAJourLaQuantiteDunProduit().
+
         public void MetAJourLesQuantitesDuPanier(Panier panier)
         {
-            // TODO implementer la méthode
-            // met à jour l'inventaire de produit en utilisant la méthode _produitRepository.MetAJourLaQuantiteDunProduit().
+            foreach (var item in panier.Lignes)
+
+            {
+                _produitRepository.MetAJourLaQuantiteDunProduit( item.Produit.Id,item.Quantite);
+            }
+            
+            
+           
+
         }
+
+        
+
+
     }
 }
+
+

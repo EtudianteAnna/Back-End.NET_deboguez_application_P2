@@ -17,7 +17,8 @@ namespace P2FixAnAppDotNetCode.Controllers
 
         public IActionResult Index()
         {
-            Produit[] produits = _produitService.GetTousLesProduits();
+          
+           List<Produit > produits  = _produitService.GetTousLesProduits();
             return View(produits);
         }
     }

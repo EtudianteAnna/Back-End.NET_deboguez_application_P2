@@ -1,90 +1,145 @@
-﻿using System.Collections.Generic;
+﻿using P2FixAnAppDotNetCode.Models;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 namespace P2FixAnAppDotNetCode.Models
 {
+
+
+
+
     /// <summary>
     /// La classe Panier
     /// </summary>
     public class Panier : IPanier
+
+
+    /// <summary>
+    /// Propriété en lecture seule pour affichage seulement
+    /// </summary>
     {
+
         /// <summary>
-        /// Propriété en lecture seule pour affichage seulement
-        /// </summary>
+        /// Retour la liste des lignes du panier	        /// Retour la liste des lignes du panier
+        /// </summary>	        /// </summary>
+        /// <returns></returns>	        /// <returns></returns>
+
+        private List<LignePanier> GetListeDesLignesDuPanier()
+
+        {
+            return _panier;
+        }
+
+        private List<LignePanier> _panier = new();
+
+
+
         public IEnumerable<LignePanier> Lignes => GetListeDesLignesDuPanier();
 
-        /// <summary>
-        /// Retour la liste des lignes du panier
-        /// </summary>
-        /// <returns></returns>
-        private List<LignePanier> GetListeDesLignesDuPanier()
-        {
-            return new List<LignePanier>();
-        }
+        public IEnumerable<object> Items { get; internal set; }
 
-        /// <summary>
-        /// Ajoute un produit dans le panier ou incrémente sa quantité dans le panier si déjà présent
-        /// </summary>//
         public void AjouterElement(Produit produit, int quantite)
+
         {
-            // TODO implementer la méthode
+
+            var panier = GetListeDesLignesDuPanier();
+            var ligne = panier.FirstOrDefault(p => p.Produit.Id == produit.Id);
+
+            if (ligne != null)
+
+            {
+
+                ligne.Quantite += quantite;
+
+            }
+
+            else
+
+            {
+
+                panier.Add(new LignePanier { Quantite = quantite, Produit = produit });
+            }
         }
 
-        /// <summary>
-        /// Supprimer un produit du panier
-        /// </summary>
         public void SupprimerLigne(Produit produit) =>
-            GetListeDesLignesDuPanier().RemoveAll(l => l.Produit.Id == produit.Id);
+        GetListeDesLignesDuPanier().RemoveAll(l => l.Produit.Id == produit.Id);
 
-        /// <summary>
-        /// Récupère la valeur totale du panier
-        /// </summary>
+
+
+
         public double GetValeurTotale()
         {
-            // TODO implementer la méthode
-            return 0.0;
+            var lignePaniers = GetListeDesLignesDuPanier();
+            double valeurTotale = 0;
+
+            foreach (LignePanier lignePanier in lignePaniers)
+            {
+
+                valeurTotale += lignePanier.Produit.Prix * lignePanier.Quantite;
+
+            }
+
+            return valeurTotale;
         }
 
-        /// <summary>
-        /// Récupère la valeur moyenne du panier
-        /// </summary>
         public double GetValeurMoyenne()
+
         {
-            // TODO implementer la méthode
-            return 0.0;
+            double valeurMoyenne = 0;
+
+            foreach (LignePanier ligne in GetListeDesLignesDuPanier())
+            {
+                valeurMoyenne += ligne.Quantite / ligne.Produit.Prix;
+            }
+
+            return valeurMoyenne;
+
         }
 
         /// <summary>
         /// Cherche un produit donné dans le panier et le retourne si trouvé
         /// </summary>
         public Produit TrouveProduitDansLesLignesDuPanier(int idProduit)
+
         {
-            // TODO implementer la méthode
+            foreach (LignePanier ligne in GetListeDesLignesDuPanier())
+            {
+                if (ligne.Produit.Id == idProduit)
+                {
+                    return ligne.Produit;
+                }
+            }
             return null;
         }
 
-        /// <summary>
-        /// Retourne une ligne de panier à partir de son indice
-        /// </summary>
-        public LignePanier GetLignePanierParIndice(int indice)
-        {
-            return Lignes.ToArray()[indice];
-        }
 
-        /// <summary>
-        /// Vide un panier de tous ses produits
-        /// </summary>
+      
         public void Vider()
         {
             List<LignePanier> lignePaniers = GetListeDesLignesDuPanier();
             lignePaniers.Clear();
-        }
-    }
 
+        }
+
+        
+
+        
+    }
     public class LignePanier
     {
+
+
         public int CommandeLigneId { get; set; }
         public Produit Produit { get; set; }
         public int Quantite { get; set; }
+
+
+
+
     }
 }
+
+
+

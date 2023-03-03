@@ -2,8 +2,10 @@
 {
     public interface IProduitRepository
     {
+
         Produit[] GetTousLesProduits();
 
         void MetAJourLaQuantiteDunProduit(int idProduit, int quantiteASupprimer);
+        
     }
 }
