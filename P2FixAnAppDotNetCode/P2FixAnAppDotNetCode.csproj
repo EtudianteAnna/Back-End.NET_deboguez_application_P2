@@ -63,10 +63,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Resources\Models\ViewModels\Order.en.resx" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="wwwroot\css\" />
   </ItemGroup>
 

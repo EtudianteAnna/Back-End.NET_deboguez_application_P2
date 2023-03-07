@@ -11,7 +11,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
 
     {
 
-      
+
 
         /// <summary>
         /// Positionne la langue de l'interface utilisateur
@@ -39,7 +39,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
             //une instruction switch pour déterminer la langue et retourner le code de culture approprié.
             //Si la langue n'est pas reconnue, la méthode retourne la culture anglaise par défaut.
 
-            switch (langage.ToLower())
+            switch (langage)
             {
                 case "en":
                     culture = "en-US";
@@ -72,7 +72,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
             context.Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)));
-            new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) };
+
         }
     }
 }
