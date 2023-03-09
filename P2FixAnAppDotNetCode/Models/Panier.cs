@@ -1,101 +1,92 @@
-﻿using P2FixAnAppDotNetCode.Models;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 
 namespace P2FixAnAppDotNetCode.Models
 {
-
-
-
-
-    /// <summary>
     /// La classe Panier
     /// </summary>
     public class Panier : IPanier
-
-
-    /// <summary>
-    /// Propriété en lecture seule pour affichage seulement
-    /// </summary>
     {
-
         /// <summary>
-        /// Retour la liste des lignes du panier	        /// Retour la liste des lignes du panier
-        /// </summary>	        /// </summary>
-        /// <returns></returns>	        /// <returns></returns>
+        /// Propriété en lecture seule pour affichage seulement
+        /// </summary>
+        private List<LignePanier> lignesPanier = new List<LignePanier>();
+      
+       public IEnumerable<LignePanier> Lignes => lignesPanier;
+              
+        /// <summary>
+        /// Retour la liste des lignes du panier	       
+        /// </summary>	        
+        /// <returns></returns>
 
         private List<LignePanier> GetListeDesLignesDuPanier()
 
         {
-            return _panier;
+            return lignesPanier;
         }
 
-        private List<LignePanier> _panier = new();
-
-
-
-        public IEnumerable<LignePanier> Lignes => GetListeDesLignesDuPanier();
-
-        public IEnumerable<object> Items { get; internal set; }
-
+        /// <summary>
+        /// Ajoute un produit dans le panier ou incrémente sa quantité dans le panier si déjà présent
+        /// </summary>//
         public void AjouterElement(Produit produit, int quantite)
-
         {
 
-            var panier = GetListeDesLignesDuPanier();
-            var ligne = panier.FirstOrDefault(p => p.Produit.Id == produit.Id);
-
-            if (ligne != null)
-
+            if (lignesPanier.Exists(p => p.Produit.Id == produit.Id))
             {
 
-                ligne.Quantite += quantite;
+                foreach (LignePanier ligne in lignesPanier)
+                {
+                    if (ligne.Produit.Id == produit.Id)
+                    {
+                        ligne.Quantite += quantite;
+                    }
+                }
 
             }
-
             else
-
             {
-
-                panier.Add(new LignePanier { Quantite = quantite, Produit = produit });
+                lignesPanier.Add(new LignePanier());
+            }
+            {
+                Produit Produit = produit;
+                int Quantite = quantite;
             }
         }
-
+             /// <summary>
+        /// Supprimer un produit du panier
+        /// </summary>
         public void SupprimerLigne(Produit produit) =>
-        GetListeDesLignesDuPanier().RemoveAll(l => l.Produit.Id == produit.Id);
+               GetListeDesLignesDuPanier().RemoveAll(l => l.Produit.Id == produit.Id);
 
-
-
-
-        public double GetValeurTotale()
+          public double GetValeurTotale()
         {
-            var lignePaniers = GetListeDesLignesDuPanier();
-            double valeurTotale = 0;
 
-            foreach (LignePanier lignePanier in lignePaniers)
+            double valeurTotale = 0.0;
+
+            foreach (LignePanier ligne in lignesPanier)
             {
 
-                valeurTotale += lignePanier.Produit.Prix * lignePanier.Quantite;
+                valeurTotale += ligne.Quantite * ligne.Produit.Prix;
 
             }
 
             return valeurTotale;
         }
 
+        /// <summary>
+        /// Récupère la valeur moyenne du panier
+        /// </summary>
         public double GetValeurMoyenne()
 
         {
-            double valeurMoyenne = 0;
-
-            foreach (LignePanier ligne in GetListeDesLignesDuPanier())
+            double valeurMoyenne = 0.0;
+            double quantiteTotale = 0.0;
+            foreach (var lignes in lignesPanier)
             {
-                valeurMoyenne += ligne.Quantite / ligne.Produit.Prix;
+                valeurMoyenne += lignes.Quantite * lignes.Produit.Prix;
+                quantiteTotale += lignes.Quantite;
             }
-
-            return valeurMoyenne;
-
+              return valeurMoyenne/quantiteTotale;
         }
 
         /// <summary>
@@ -104,42 +95,44 @@ namespace P2FixAnAppDotNetCode.Models
         public Produit TrouveProduitDansLesLignesDuPanier(int idProduit)
 
         {
-            foreach (LignePanier ligne in GetListeDesLignesDuPanier())
+            Produit trouveProduit = null;
+            foreach (var ligne in lignesPanier)
             {
                 if (ligne.Produit.Id == idProduit)
-                {
-                    return ligne.Produit;
-                }
+                    trouveProduit = ligne.Produit;
             }
-            return null;
+               return trouveProduit;
+       }
+
+        /// <summary>
+        /// Retourne une ligne de panier à partir de son indice
+        /// </summary>
+        public LignePanier GetLignePanierParIndice(int indice)
+        {
+            return Lignes.ToArray()[indice];
         }
-
-
-      
+        /// <summary>
+        /// Vide un panier de tous ses produits
+        /// </summary>
         public void Vider()
         {
             List<LignePanier> lignePaniers = GetListeDesLignesDuPanier();
             lignePaniers.Clear();
+        }
+    }
+
+        public class LignePanier
+        {
+            public int CommandeLigneId { get; set; }
+            public Produit Produit { get; set; }
+            public int Quantite { get; set; }
+
+
+
 
         }
-
-        
-
-        
-    }
-    public class LignePanier
-    {
-
-
-        public int CommandeLigneId { get; set; }
-        public Produit Produit { get; set; }
-        public int Quantite { get; set; }
-
-
-
-
-    }
 }
+
 
 
 

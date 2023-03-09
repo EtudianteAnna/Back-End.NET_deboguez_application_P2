@@ -12,7 +12,7 @@ namespace P2FixAnAppDotNetCode.Models
         public int IdCommande { get; set; }
         [BindNever]
         
-        public ICollection<LignePanier> Lignes { get; set; }
+        public ICollection<LignePanier>? Lignes { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingName")]
         public string Nom { get; set; }
@@ -22,8 +22,8 @@ namespace P2FixAnAppDotNetCode.Models
 
         [Required(ErrorMessage = "ErrorMissingCity")]
         public string Ville { get; set; }
-              
-        
+
+
         public string? CodePostal { get; set; }
 
         [Required(ErrorMessage = "ErrorMissingCountry")]
@@ -31,9 +31,6 @@ namespace P2FixAnAppDotNetCode.Models
 
         [BindNever]
         public DateTime Date { get; set; }
-        public Commande() 
-        { 
-         Date= DateTime.Now;
-        } 
+        
     }
 }

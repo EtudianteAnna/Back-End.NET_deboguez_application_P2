@@ -1,0 +1,11 @@
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\P2FixAnAppDotNetCode.exe
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\bundleconfig.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\libman.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\P2FixAnAppDotNetCode.dll
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\P2FixAnAppDotNetCode.deps.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\P2FixAnAppDotNetCode.runtimeconfig.json
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\P2FixAnAppDotNetCode.pdb
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\en\P2FixAnAppDotNetCode.resources.dll
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Release\net6.0\PubTmp\Out\fr\P2FixAnAppDotNetCode.resources.dll

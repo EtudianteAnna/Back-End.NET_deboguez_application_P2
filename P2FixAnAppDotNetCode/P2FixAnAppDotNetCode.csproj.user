@@ -5,6 +5,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ActiveDebugProfile>P2FixAnAppDotNetCode</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\Properties\PublishProfiles\Proj220230303144605 - Web Deploy.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <ItemGroup />
 </Project>

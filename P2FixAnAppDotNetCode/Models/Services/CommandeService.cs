@@ -10,7 +10,7 @@ namespace P2FixAnAppDotNetCode.Models.Services
     {
        private readonly IPanier _panier;
        private readonly ICommandeRepository _repository;
-       private readonly IProduitService _produitService;
+        private readonly IProduitService _produitService;
 
         public CommandeService(IPanier panier, ICommandeRepository commandeRepository, IProduitService produitService)
         {

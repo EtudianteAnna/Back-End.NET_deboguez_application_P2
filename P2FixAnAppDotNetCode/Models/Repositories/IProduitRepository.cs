@@ -3,7 +3,7 @@
     public interface IProduitRepository
     {
 
-        Produit[] GetTousLesProduits();
+       List< Produit> GetTousLesProduits();
 
         void MetAJourLaQuantiteDunProduit(int idProduit, int quantiteASupprimer);
         

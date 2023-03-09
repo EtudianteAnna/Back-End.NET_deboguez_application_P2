@@ -8,11 +8,11 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
     /// </summary>
     public class ProduitRepository : IProduitRepository
     {
-        private static List<Produit> _produits;
+        private static List<Produit> _produits= new List<Produit>();
 
         public ProduitRepository()
         {
-            _produits = new List<Produit>();
+            if (_produits.Count==0)
             GenereDesProduits();
         }
 
@@ -32,10 +32,10 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
         /// <summary>
         /// Récupère tous les produits depuis l'inventaire
         /// </summary>
-        public Produit[] GetTousLesProduits()
+        public List <Produit> GetTousLesProduits()
         {
             List<Produit> liste = _produits.Where(p => p.Stock > 0).OrderBy(p => p.Nom).ToList();
-            return liste.ToArray();
+            return liste;
         }
 
         /// <summary>
