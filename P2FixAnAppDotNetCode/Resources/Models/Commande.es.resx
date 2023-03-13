@@ -117,11 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CartEmpty" xml:space="preserve">
-    <value>Sorry, your cart is empty !</value>
+  <data name="ErrorMissingAddress" xml:space="preserve">
+    <value>Por favor ingrese una dirección</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CommandeController.es.resx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CommandeController.es.resx.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="ErrorMissingCity" xml:space="preserve">
+    <value>Ingrese el nombre de una ciudad</value>
+  </data>
+  <data name="ErrorMissingCountry" xml:space="preserve">
+    <value>Ingrese un nombre de país</value>
+  </data>
+  <data name="ErrorMissingName" xml:space="preserve">
+    <value>Por favor ingrese un nombre</value>
   </data>
 </root>

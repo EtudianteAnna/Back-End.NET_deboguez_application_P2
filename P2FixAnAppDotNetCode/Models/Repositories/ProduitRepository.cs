@@ -12,7 +12,7 @@ namespace P2FixAnAppDotNetCode.Models.Repositories
 
         public ProduitRepository()
         {
-            if (_produits.Count==0)
+            if (_produits.Count == 0)
             GenereDesProduits();
         }
 

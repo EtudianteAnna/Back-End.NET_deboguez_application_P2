@@ -117,11 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CartEmpty" xml:space="preserve">
-    <value>Sorry, your cart is empty !</value>
+  <data name="Adress" xml:space="preserve">
+    <value>Dirección</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="CommandeController.es.resx" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\CommandeController.es.resx.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  <data name="City" xml:space="preserve">
+    <value>Ciudad</value>
+  </data>
+  <data name="CompleteOrder" xml:space="preserve">
+    <value>Orden completa</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>País</value>
+  </data>
+  <data name="EnterDetails" xml:space="preserve">
+    <value>Rellenar el formulario</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Ubicación</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nombre</value>
+  </data>
+  <data name="OrderTitle" xml:space="preserve">
+    <value>Título del pedido</value>
+  </data>
+  <data name="ShipSoon" xml:space="preserve">
+    <value>barco pronto</value>
+  </data>
+  <data name="ShipTo" xml:space="preserve">
+    <value>Envie a</value>
+  </data>
+  <data name="Zip" xml:space="preserve">
+    <value>Cremallera</value>
   </data>
 </root>

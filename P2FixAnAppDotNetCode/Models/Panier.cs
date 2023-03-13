@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿
 
 namespace P2FixAnAppDotNetCode.Models
 {
@@ -45,11 +44,14 @@ namespace P2FixAnAppDotNetCode.Models
             }
             else
             {
-                lignesPanier.Add(new LignePanier());
-            }
-            {
-                Produit Produit = produit;
-                int Quantite = quantite;
+                lignesPanier.Add(new LignePanier
+
+                {
+                    Produit = produit,
+
+                    Quantite = quantite
+                });
+            
             }
         }
              /// <summary>
@@ -81,6 +83,11 @@ namespace P2FixAnAppDotNetCode.Models
         {
             double valeurMoyenne = 0.0;
             double quantiteTotale = 0.0;
+
+            if (lignesPanier.Count==0)
+                {
+                return 0.0;
+                }
             foreach (var lignes in lignesPanier)
             {
                 valeurMoyenne += lignes.Quantite * lignes.Produit.Prix;

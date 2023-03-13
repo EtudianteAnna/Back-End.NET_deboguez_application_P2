@@ -11,11 +11,11 @@
           "P2FixAnAppDotNetCode.dll": {}
         },
         "resources": {
-          "en/P2FixAnAppDotNetCode.resources.dll": {
-            "locale": "en"
-          },
           "fr/P2FixAnAppDotNetCode.resources.dll": {
             "locale": "fr"
+          },
+          "en/P2FixAnAppDotNetCode.resources.dll": {
+            "locale": "en"
           },
           "es/P2FixAnAppDotNetCode.resources.dll": {
             "locale": "es"

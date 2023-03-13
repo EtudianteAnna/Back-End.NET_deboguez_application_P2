@@ -66,7 +66,6 @@ C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\bin\Debug\net6.0\en\P2Fi
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\bin\Debug\net6.0\fr\P2FixAnAppDotNetCode.resources.dll
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\bin\Debug\net6.0\es\P2FixAnAppDotNetCode.resources.dll
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.csproj.AssemblyReference.cache
-C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Controllers.CommandeController.en.resources
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Controllers.CommandeController.fr.resources
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Models.Commande.en.resources
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Models.Commande.fr.resources
@@ -109,3 +108,8 @@ C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\refint\
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.pdb
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.genruntimeconfig.cache
 C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\ref\P2FixAnAppDotNetCode.dll
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Properties.Resources.resources
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Controllers.CommandeController.es.resources
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Models.Commande.es.resources
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Views.Commande.Completed.es.resources
+C:\Users\A154NF\source\repos\Proj2\P2FixAnAppDotNetCode\obj\Debug\net6.0\P2FixAnAppDotNetCode.Resources.Views.Commande.Index.es.resources
