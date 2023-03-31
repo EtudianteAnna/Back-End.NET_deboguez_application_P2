@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\P2FixAnAppDotNetCode",
+    "\\P2FixAnAppDotNetCode\\Models",
+    "\\P2FixAnAppDotNetCode\\Models\\Services",
+    "\\P2FixAnAppDotNetCode\\Resources",
+    "\\P2FixAnAppDotNetCode\\Resources\\Models",
+    "\\P2FixAnAppDotNetCode\\Resources\\Views",
+    "\\P2FixAnAppDotNetCode\\Resources\\Views\\Commande",
+    "\\P2FixAnAppDotNetCode\\Resources\\Views\\Panier",
+    "\\P2FixAnAppDotNetCode\\Resources\\Views\\Produit"
+  ],
+  "SelectedNode": "\\P2FixAnAppDotNetCode\\Models\\Services\\ProduitService.cs",
+  "PreviewInSolutionExplorer": false
+}

@@ -15,8 +15,7 @@ namespace P2FixAnAppDotNetCode.Models
         public int Stock { get; set; }
         public double Prix { get; set; }
     }
-    
+
 }
-// Utilisation du constructeur pour créer une nouvelle instance de Produit
-   
+    
 
